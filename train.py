@@ -91,7 +91,7 @@ parser.add_argument('--decay_rate',
 
 #### Model Config
 parser.add_argument('--token_emb_dim',
-                    default=100, type=int,
+                    default=0, type=int,
                     action='store',)
 
 parser.add_argument('--char_encoder',
@@ -144,6 +144,10 @@ parser.add_argument('--vocab_size',
 
 parser.add_argument('--vocab_file',
                     default=None, type=none_or_str,
+                    action='store',)
+
+parser.add_argument('--tag_vocab_size',
+                    default=0, type=int,
                     action='store',)
 
 parser.add_argument('--ner_tag_vocab_size',

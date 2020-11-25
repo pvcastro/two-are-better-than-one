@@ -356,7 +356,7 @@ class JointModel(Tagger):
             ner_tags = self.ner_tag_indexing(rets['ner_tags']).to(self.device)
         
         if self.config.crf == 'CRF':
-            e_loss = - self.crf_layer(ner_tag_logits, tags, mask=mask, reduction=self.config.loss_reduction)
+            e_loss = - self.crf_layer(ner_tag_logits, ner_tags, mask=mask, reduction=self.config.loss_reduction)
         elif not self.config.crf:
             e_loss = self.loss_layer(ner_tag_logits.permute(0, 2, 1), ner_tags) # B, T
             e_loss = (e_loss * mask_float).sum()

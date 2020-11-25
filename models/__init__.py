@@ -32,6 +32,7 @@ class Config:
         lr=1e-3,
         vocab_size=50000,
         vocab_file='./datasets/vocab.txt',
+        tag_vocab_size=0,
         ner_tag_vocab_size=100,
         re_tag_vocab_size=100,
         lm_emb_dim=0,
@@ -60,6 +61,7 @@ class Config:
         self.maxlen = maxlen
         self.vocab_size = vocab_size
         self.vocab_file = vocab_file
+        self.tag_vocab_size = tag_vocab_size
         self.ner_tag_vocab_size = ner_tag_vocab_size
         self.re_tag_vocab_size = re_tag_vocab_size
         self.tag_form = tag_form
